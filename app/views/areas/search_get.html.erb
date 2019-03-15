@@ -1,4 +1,14 @@
 <div class="form-group w-50 mx-auto">
+  <% if @message %>
+    <div class="text-left">
+      <div class="alert alert-danger" role="alert">
+        <%= @message %>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span> 
+        </button>
+      </div>
+    </div>
+  <% end %>
   <h1>エリア検索</h1>
   <%= form_with  url: areas_search_path,local: true, method: :post do |form| %>
     <%= form.label "郵便番号で検索", class: "text-left d-block" %>
