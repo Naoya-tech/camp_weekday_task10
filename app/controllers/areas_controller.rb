@@ -4,6 +4,9 @@ class AreasController < ApplicationController
     @areas = Area.all
   end
 
+  def search_get
+  end
+
 
 
 end
