@@ -1,0 +1,35 @@
+<% if flash.notice %>
+  <div>
+    <div class="alert alert-success text-left" role="alert">
+      <%= flash.notice %>
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+  </div>
+<% end %>
+<table class="table table-striped table-bordered">
+  <thead>
+      <tr>
+          <th>ID</th>
+          <th>ZipCode</th>
+          <th>PrefCode</th>
+          <th>Adress</th>
+          <th>Kana</th>
+          <th>Introduction</th>
+      </tr>
+  </thead>
+  <tbody>
+      <% @areas.each do |area| %>
+        <tr>
+          <th><%= area.id %></th>
+          <td><%= area.zipcode %></td>
+          <td><%= area.prefcode %></td>
+          <td><%= area.address1 %><%= area.address2 %><%= area.address3 %></td>
+          <td><%= area.kana1 %><%= area.kana2 %><%= area.kana3 %></td>
+          <td><%= area.introduction %></td>
+        </tr>
+      <% end %>
+  </tbody>
+</table>
+<p><%= link_to "検索する", areas_search_path, class:"btn btn-primary btn-lg btn-block" %></p>
