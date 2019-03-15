@@ -2,7 +2,9 @@
   <% if @area.errors.any? %>
     <div class="mx-auto offset-md-3 mt-3">
       <div class="alert alert-danger text-left" role="alert">
-        <%= "Validation faild: Introduction can't be blank" %>
+        <% @area.errors.full_messages.each do |message| %>
+          <%= "Validation faild: #{message}" %>
+        <% end %>
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
