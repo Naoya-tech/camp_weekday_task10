@@ -20,7 +20,7 @@ class AreasController < ApplicationController
     @area = Area.new(area_params)
     if @area.save
       flash[:notice] = "地域を登録しました。"
-      redirect_to areas_index_path
+      redirect_to "/"
     else
       render "new"
     end
