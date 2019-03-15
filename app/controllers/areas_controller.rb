@@ -31,4 +31,20 @@ class AreasController < ApplicationController
     end
   end
 
+  def create
+    @area = Area.new(area_params)
+    if @area.save
+      flash[:notice] = "地域を登録しました。"
+      redirect_to areas_index_path
+    else
+      render "new"
+    end
+  end
+
+  private
+
+  def area_params # ストロングパラメータを定義する
+    params.require(:area).permit(:zipcode, :address1, :address2, :address3, :kana1, :kana2, :kana3, :prefcode, :introduction)
+  end
+
 end

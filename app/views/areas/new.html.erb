@@ -1,0 +1,24 @@
+<div class="form-group w-50 mx-auto">
+  <h1>エリア登録</h1>
+  <%= form_with model: @area, local: true do |form| %>
+    <%= form.label "zipcode", class: "text-left d-block" %>
+    <p><%= form.text_field :zipcode, value: @area.zipcode, readonly: true, class:"form-control" %></p>
+    <%= form.label "Prefcode", class: "text-left d-block" %>
+    <p><%= form.text_field :prefcode, value: @area.prefcode, readonly: true, class:"form-control" %></p>
+    <%= form.label "Address1", class: "text-left d-block" %>
+    <p><%= form.text_field :address1, value: @area.address1, readonly: true, class:"form-control" %></p>
+    <%= form.label "kana1", class: "text-left d-block" %>
+    <p><%= form.text_field :kana1, value: @area.kana1, readonly: true, class:"form-control" %></p>
+    <%= form.label "Address2", class: "text-left d-block" %>
+    <p><%= form.text_field :address2, value: @area.address2, readonly: true, class:"form-control" %></p>
+    <%= form.label "kana2", class: "text-left d-block" %>
+    <p><%= form.text_field :kana2, value: @area.kana2, readonly: true, class:"form-control" %></p>
+    <%= form.label "Address3", class: "text-left d-block" %>
+    <p><%= form.text_field :address3, value: @area.address3, readonly: true, class:"form-control" %></p>
+    <%= form.label "kana3", class: "text-left d-block" %>
+    <p><%= form.text_field :kana3, value: @area.kana3, readonly: true, class:"form-control" %></p>
+    <%= form.label "Introduction", class: "text-left d-block" %>
+    <p><%= form.text_area :introduction, class:"form-control" %></p>
+    <p><%= form.submit "登録", class:"btn btn-primary btn-lg btn-block" %></p>
+  <% end %>
+</div>
