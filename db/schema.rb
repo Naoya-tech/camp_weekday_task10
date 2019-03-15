@@ -13,7 +13,7 @@
 ActiveRecord::Schema.define(version: 2019_03_13_181620) do
 
   create_table "areas", force: :cascade do |t|
-    t.integer "zipcode"
+    t.string "zipcode"
     t.integer "prefcode"
     t.string "address1"
     t.string "address2"
